@@ -1,5 +1,5 @@
 package com.example.githubrepositories.model
 
-class Response {
+class ResponseModel {
     lateinit var repositoryList: List<RepositoryData>
 }
