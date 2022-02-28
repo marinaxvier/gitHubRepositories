@@ -1,5 +1,7 @@
 package com.example.githubrepositories.model
 
-class ResponseModel {
-    lateinit var repositoryList: List<RepositoryData>
-}
+import com.google.gson.annotations.SerializedName
+
+data class ResponseModel (
+    @SerializedName("items") var repositoryList: List<RepositoryData>
+)

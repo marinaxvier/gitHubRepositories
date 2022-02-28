@@ -7,7 +7,7 @@ import retrofit2.create
 object Retrofit {
     private val retrofit by lazy {
         Retrofit.Builder()
-            .baseUrl("https://api.github.com/search/repositories")
+            .baseUrl("https://api.github.com/search/")
             .addConverterFactory(GsonConverterFactory.create())
             .build()
     }
