@@ -1,4 +1,4 @@
-package com.example.githubrepositories
+package com.example.githubrepositories.ui.main
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
