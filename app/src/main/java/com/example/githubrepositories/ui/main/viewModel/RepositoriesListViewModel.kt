@@ -16,9 +16,9 @@ class RepositoriesListViewModel(private val repository: Repository) : ViewModel(
     get() = _repositoriesResponse
 
 
-    fun getRepositories() {
+    fun getRepositories(page: Int) {
         viewModelScope.launch(Dispatchers.IO) {
-            val repositories: Response<RepositoriesResponse> = repository.getRepositories()
+            val repositories: Response<RepositoriesResponse> = repository.getRepositories(page)
             _repositoriesResponse.postValue(repositories)
         }
     }

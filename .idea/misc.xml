@@ -4,7 +4,8 @@
     <option name="filePathToZoomLevelMap">
       <map>
         <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/drawable/item_background_border.xml" value="0.240625" />
-        <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/activity_main.xml" value="0.11851851851851852" />
+        <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/activity_main.xml" value="0.5" />
+        <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/activity_repositories.xml" value="0.25029655990510086" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/item_background_border.xml" value="0.22447916666666667" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/rv_repositories_item.xml" value="0.5" />
         <entry key="..\:/Users/Marina/AndroidStudioProjects/GitHubRepositories/app/src/main/res/layout/toolbar.xml" value="0.22447916666666667" />

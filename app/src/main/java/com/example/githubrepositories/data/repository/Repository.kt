@@ -6,7 +6,7 @@ import retrofit2.Response
 
 class Repository {
 
-    suspend fun getRepositories(): Response<RepositoriesResponse>{
-       return Retrofit.gitHubService.getRepositories("1")
+    suspend fun getRepositories(page: Int): Response<RepositoriesResponse>{
+       return Retrofit.gitHubService.getRepositories(page)
     }
 }
