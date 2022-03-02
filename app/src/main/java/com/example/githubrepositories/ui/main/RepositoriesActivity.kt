@@ -21,6 +21,8 @@ class RepositoriesActivity : AppCompatActivity() {
     lateinit var repository: Repository
     private var isLoading = true
     private var page = 1
+    private var defaultList = ArrayList<RepositoryData>()
+    private lateinit var mAdapter: RepositoriesAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -33,17 +35,24 @@ class RepositoriesActivity : AppCompatActivity() {
         val viewModelFactory = ViewModelFactory(repository)
         //Refatorar
         viewModel =
-            ViewModelProvider(this, viewModelFactory).get(RepositoriesListViewModel::class.java)
+            ViewModelProvider(this, viewModelFactory)[RepositoriesListViewModel::class.java]
         viewModel.getRepositories(page)
-        viewModel.repositoriesResponse.observe(this, { repositories ->
+
+        setAdapter(defaultList)
+
+        viewModel.repositoriesResponse.observe(this) { repositories ->
             if (repositories.isSuccessful && repositories.body()?.repositoryList != null) {
-                setAdapter(repositories.body()!!.repositoryList)
+                updateAdapter(repositories.body()!!.repositoryList)
             }
-        })
+        }
     }
 
-    private fun setAdapter(repositoriesList: List<RepositoryData>) {
-        val mAdapter = RepositoriesAdapter(repositoriesList)
+    private fun updateAdapter(repositoryList: ArrayList<RepositoryData>) {
+        mAdapter.update(repositoryList)
+    }
+
+    private fun setAdapter(repositoriesList: ArrayList<RepositoryData>) {
+        mAdapter = RepositoriesAdapter(repositoriesList)
         val mLayoutManager = LinearLayoutManager(this)
 
         val mScrollListener = object : RecyclerView.OnScrollListener() {

@@ -7,7 +7,7 @@ import com.bumptech.glide.Glide
 import com.example.githubrepositories.databinding.RvRepositoriesItemBinding
 import com.example.githubrepositories.model.RepositoryData
 
-class RepositoriesAdapter(val repositories: List<RepositoryData>) :
+class RepositoriesAdapter(private val repositories: ArrayList<RepositoryData>) :
     RecyclerView.Adapter<RepositoriesViewHolder>() {
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RepositoriesViewHolder {
 
@@ -21,12 +21,17 @@ class RepositoriesAdapter(val repositories: List<RepositoryData>) :
     }
 
     override fun onBindViewHolder(holder: RepositoriesViewHolder, position: Int) {
-        val repository = repositories.get(position)
+        val repository = repositories[position]
         holder.bind(repository)
     }
 
     override fun getItemCount(): Int {
         return repositories.size
+    }
+
+    fun update(list: List<RepositoryData>){
+        repositories.addAll(list)
+        notifyDataSetChanged()
     }
 }
 
