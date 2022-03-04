@@ -7,5 +7,5 @@ import retrofit2.http.Query
 
 interface GitHubService {
     @GET("repositories?q=language:kotlin&sort=stars")
-    suspend fun getRepositories(@Query("page") page: String): Response<RepositoriesResponse>
+    suspend fun getRepositories(@Query("page") page: Int): Response<RepositoriesResponse>
 }

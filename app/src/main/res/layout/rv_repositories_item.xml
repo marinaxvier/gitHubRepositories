@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:background="@drawable/item_background_border"
-    android:layout_marginBottom="5dp"
+    android:layout_marginBottom="10dp"
     android:layout_marginStart="5dp"
     android:layout_marginEnd="5dp">
 
@@ -15,8 +15,8 @@
         android:layout_width="60dp"
         android:layout_height="60dp"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="20dp"
-        android:layout_marginBottom="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
@@ -27,11 +27,11 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:layout_marginStart="15dp"
-        android:layout_marginTop="15dp"
+        android:layout_marginTop="10dp"
         android:layout_marginEnd="15dp"
         android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="20dp"
+        android:textSize="15dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toEndOf="@+id/ivAuthorAvatar"
         app:layout_constraintTop_toTopOf="parent" />
@@ -43,7 +43,7 @@
         android:layout_marginTop="5dp"
         android:text="TextView"
         android:textColor="@color/white"
-        android:textSize="15dp"
+        android:textSize="10dp"
         app:layout_constraintEnd_toEndOf="@+id/tvRepositoryName"
         app:layout_constraintStart_toStartOf="@+id/tvRepositoryName"
         app:layout_constraintTop_toBottomOf="@+id/tvRepositoryName" />
@@ -53,10 +53,10 @@
         android:layout_width="15dp"
         android:layout_height="15dp"
         android:layout_marginTop="5dp"
+        android:layout_marginBottom="10dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintStart_toStartOf="@+id/tvRepositoryAuthor"
         app:layout_constraintTop_toBottomOf="@+id/tvRepositoryAuthor"
-        app:layout_constraintVertical_bias="0.0"
         app:srcCompat="@drawable/ic_star"
         android:scaleType="fitCenter"/>
 
