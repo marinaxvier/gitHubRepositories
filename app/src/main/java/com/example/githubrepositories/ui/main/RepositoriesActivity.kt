@@ -1,6 +1,7 @@
 package com.example.githubrepositories.ui.main
 
 import android.os.Bundle
+import android.view.View
 import android.widget.LinearLayout
 import androidx.appcompat.app.AppCompatActivity
 import androidx.lifecycle.Observer
@@ -41,9 +42,16 @@ class RepositoriesActivity : AppCompatActivity() {
         setAdapter(defaultList)
 
         viewModel.repositoriesResponse.observe(this) { repositories ->
-            if (repositories.isSuccessful && repositories.body()?.repositoryList != null) {
-                updateAdapter(repositories.body()!!.repositoryList)
+            if (repositories != null) {
+                updateAdapter(repositories)
             }
+        }
+
+        viewModel.errorResponse.observe(this) { errorMessage ->
+            binding.tvErrorMessage.text = getString(errorMessage)
+            binding.tvErrorMessage.visibility = View.VISIBLE
+            binding.tvDescription.visibility = View.INVISIBLE
+
         }
     }
 

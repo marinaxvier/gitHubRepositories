@@ -4,6 +4,7 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
+import com.example.githubrepositories.R
 import com.example.githubrepositories.databinding.RvRepositoriesItemBinding
 import com.example.githubrepositories.model.RepositoryData
 
@@ -29,7 +30,8 @@ class RepositoriesAdapter(private val repositories: ArrayList<RepositoryData>) :
         return repositories.size
     }
 
-    fun update(list: List<RepositoryData>){
+    fun update(list: ArrayList<RepositoryData>){
+        repositories.clear()
         repositories.addAll(list)
         notifyDataSetChanged()
     }
@@ -45,6 +47,7 @@ class RepositoriesViewHolder(private val bindingItem: RvRepositoriesItemBinding)
         Glide.with(bindingItem.root)
             .load(repository.owner.avatar)
             .centerCrop()
+            .error(R.drawable.ic_error)
             .into(bindingItem.ivAuthorAvatar)
     }
 }
